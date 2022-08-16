@@ -5,12 +5,12 @@ const city = document.querySelector('.city');
 const weatherWind = document.querySelector('.wind');
 const weatherHumidity = document.querySelector('.humidity');
 const weatherInfo = document.querySelector('.weather__info');
+let languages = document.querySelector('.language');
 
-let language = document.querySelector('.language');
-language = language.textContent
+
 
 async function getWeather() {
-  
+  let language = languages.textContent  
   if (city.textContent.length !== 0){
   weatherInfo.style.display = 'flex';
   let nameCity = localStorage.getItem('city');
@@ -45,7 +45,7 @@ async function getWeather() {
         ru: " м/c",
         en: " m/s"
     },
-  }    
+  }  
   weatherIcon.className = 'weather-icon owf';
   weatherIcon.classList.add(`owf-${data.weather[0].id}`);
   temperature.textContent = `${data.main.temp.toFixed(0)}°C`;

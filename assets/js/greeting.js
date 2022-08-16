@@ -1,11 +1,7 @@
 const greeting = document.querySelector('.greeting');
 const name = document.querySelector('.name');
+let languages = document.querySelector('.language');
 
-let language = document.querySelector('.language');
-language = language.textContent
-
-
-console.log(language)
 
 const placeHolder = { 
   en: '[Enter your name]',
@@ -13,6 +9,7 @@ const placeHolder = {
 }
 
 function getTimeOfDay() {
+  let language = languages.textContent
   let partOfDay = {
     en: ['night', 'morning', 'afternoon', 'evening'],
     ru: ['ночи,', 'утро,', 'день,', 'вечер,']
@@ -24,6 +21,8 @@ return (partOfDay[language][(Math.floor(hours/6))]);
 }
 
 function showGreeting(){
+let language = languages.textContent
+console.log(languages.textContent)
 let greetingText ='';
 if (language == 'en'){
     greetingText = `Good ${getTimeOfDay()}`;

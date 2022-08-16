@@ -1,32 +1,31 @@
 
 let setingsLanguage = document.querySelectorAll('.settings'); 
+let language = document.querySelector('.language'); 
 import showGreeting from "./greeting.js";
 import initWeather from "./weather.js";
 import showDate from "./date.js";
 import changeQuotes from "./quotes.js";
-let language = document.querySelector('.language'); 
-localStorage.setItem('lang', language.textContent);
+
+
 
 function initLAnguage(){
 let nameCity = localStorage.getItem('lang');
-console.log(nameCity)
-let defaultlanguage='en';
 language.type = "text";
 if (nameCity) {
     if (nameCity == 0) {
-        language.textContent = defaultlanguage;
         localStorage.setItem('lang', language.textContent);
     } else {
         language.textContent = localStorage.getItem('lang');
     }
 } else {
     localStorage.setItem('lang', language.textContent);
-    language.textContent = defaultlanguage;
 }
 }
+console.log(language.textContent)
+
 
 function getLanguage(){
-    initLAnguage()
+    initLAnguage();
     for (let i = 0; i<setingsLanguage.length; i++){
         setingsLanguage[i].addEventListener('click', function(event){
             let ev = event.target;
@@ -40,6 +39,7 @@ function getLanguage(){
     showDate()
     changeQuotes()
 }
-console.log(language.textContent)
+
 
 export default getLanguage;
+
