@@ -2,10 +2,9 @@ const settingItemTitle = document.querySelectorAll('.setting__text');
 const widgetItemText = document.querySelectorAll('.widget__name');
 const settingsBtn = document.querySelector('.settings-img');
 const settingsBlock = document.querySelector('.settings');
-let language = document.querySelector('.language'); 
 
-
-language = language.textContent;
+let language = document.querySelector('.language');
+language = language.textContent
 
 let isOpen = 'false';
 

@@ -1,7 +1,8 @@
 const greeting = document.querySelector('.greeting');
 const name = document.querySelector('.name');
 
-let language = localStorage.getItem('lang')
+let language = document.querySelector('.language');
+language = language.textContent
 
 
 console.log(language)

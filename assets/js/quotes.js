@@ -2,7 +2,8 @@ const textOfQuote = document.querySelector('.quote');
 const authorOfQuote = document.querySelector('.author');
 const buttonChangeQuote = document.querySelector('.change-quote');
 
-let language = localStorage.getItem('lang')
+let language = document.querySelector('.language');
+language = language.textContent
 
 function getRandomNum(max) {
     return Math.floor(Math.random() * max);

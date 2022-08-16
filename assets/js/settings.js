@@ -1,8 +1,6 @@
 
-let language = document.querySelector('.language'); 
-
-
-language = language.textContent;
+let language = document.querySelector('.language');
+language = language.textContent
 
 function setWidjets() {
     let defaultActiveWidjets = ['Player', 'Time', 'Date', 'Weather', 'Greeting'];
