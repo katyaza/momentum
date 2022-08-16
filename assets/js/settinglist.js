@@ -2,9 +2,8 @@ const settingItemTitle = document.querySelectorAll('.setting__text');
 const widgetItemText = document.querySelectorAll('.widget__name');
 const settingsBtn = document.querySelector('.settings-img');
 const settingsBlock = document.querySelector('.settings');
+let languages = document.querySelector('.language');
 
-let language = document.querySelector('.language');
-language = language.textContent
 
 let isOpen = 'false';
 
@@ -37,9 +36,11 @@ export default function initPanel() {
 
 
     for (let i = 0; i<settingItemTitle.length; i++){
+        let language = languages.textContent
         settingItemTitle[i].innerHTML = wordsForTitle[language][i];
     }
     for (let i = 0; i<widgetItemText.length; i++){
+        let language = languages.textContent
         widgetItemText[i].innerHTML = wordsForText[language][i];
     }
     return

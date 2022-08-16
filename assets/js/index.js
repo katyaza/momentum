@@ -8,9 +8,6 @@ initPanel()
 import initSettings from "./settings.js"
 initSettings()
 
-import getLanguage from "./translate.js";
-getLanguage()
-
 import showTime from "./time.js";
 showTime();
 
@@ -30,6 +27,9 @@ import changeQuotes from "./quotes.js";
 changeQuotes()
 
 import initWeather from "./weather.js";
+
+import getLanguage from "./translate.js";
+getLanguage()
 
 
 

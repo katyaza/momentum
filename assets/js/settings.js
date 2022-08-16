@@ -1,8 +1,8 @@
+let languages = document.querySelector('.language');
 
-let language = document.querySelector('.language');
-language = language.textContent
 
 function setWidjets() {
+  let language = languages.textContent
     let defaultActiveWidjets = ['Player', 'Time', 'Date', 'Weather', 'Greeting'];
     for (let i = 0; i < defaultActiveWidjets.length; i++) {
         if (!localStorage.getItem(defaultActiveWidjets[i])) {

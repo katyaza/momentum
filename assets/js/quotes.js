@@ -1,9 +1,8 @@
 const textOfQuote = document.querySelector('.quote');
 const authorOfQuote = document.querySelector('.author');
 const buttonChangeQuote = document.querySelector('.change-quote');
+let languages = document.querySelector('.language');
 
-let language = document.querySelector('.language');
-language = language.textContent
 
 function getRandomNum(max) {
     return Math.floor(Math.random() * max);
@@ -15,6 +14,7 @@ function getQuotes() {
     fetch(quotes)
       .then(res => res.json())
       .then(data => { 
+        let language = languages.textContent
         textOfQuote.innerHTML = data[language][getRandomNum(data[language].length)].text;
         authorOfQuote.innerHTML = data[language][getRandomNum(data[language].length)].author;
     });

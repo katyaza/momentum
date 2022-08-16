@@ -1,9 +1,9 @@
 const date = document.querySelector('.date');
+let languages = document.querySelector('.language');
 
-let language = document.querySelector('.language');
-language = language.textContent
 
 function showDate() {
+  let language = languages.textContent
   const newDate = new Date;
   const options = { weekday: 'long', day: 'numeric', month: 'long', timeZone: 'UTC' };
   const currentDate = newDate.toLocaleDateString(language, options);
