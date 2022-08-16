@@ -1,11 +1,8 @@
 const greeting = document.querySelector('.greeting');
 const name = document.querySelector('.name');
 
+let language = localStorage.getItem('lang')
 
-import getLanguage from "./translate.js";
-
-
-let language = localStorage.getItem('lang');
 
 console.log(language)
 

@@ -408,6 +408,10 @@ body {
   border-radius: 20px;
   padding:10px;
 }
+.language{
+  position: absolute;
+  left:-100%;
+}
 .settings-close{
   display: none;
 }
