@@ -47,12 +47,12 @@ module.exports = {
     new MiniCssExtractPlugin({
       filename: '[name].css',
     }),
-    // new CopyPlugin({
-    //   patterns: [{
-    //     from: 'public',
-    //     noErrorOnMissing: true,
-    //   }],
-    // }),
+    new CopyPlugin({
+      patterns: [{
+        from: 'public',
+        noErrorOnMissing: true,
+      }],
+    }),
   ],
   devtool: 'inline-source-map',
 
@@ -63,6 +63,6 @@ module.exports = {
       directory: path.join(__dirname, 'dist')
     },
     compress: true,
-    port: 3000,
+    port: 9000,
   },
 };

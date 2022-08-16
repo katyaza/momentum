@@ -1,11 +1,11 @@
 const date = document.querySelector('.date');
 
-let userLang = navigator.language || navigator.userLanguage;
+let language = localStorage.getItem('lang');
 
 function showDate() {
   const newDate = new Date;
   const options = { weekday: 'long', day: 'numeric', month: 'long', timeZone: 'UTC' };
-  const currentDate = newDate.toLocaleDateString(userLang, options);
+  const currentDate = newDate.toLocaleDateString(language, options);
   date.innerHTML = currentDate;
 }
 

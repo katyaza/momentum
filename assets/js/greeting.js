@@ -1,26 +1,33 @@
 const greeting = document.querySelector('.greeting');
 const name = document.querySelector('.name');
 
-function getLanguage(){
-    let language = '';
-    if (navigator.language || navigator.userLanguage == 'ru-RU'){
-        return language = 'ru';
-    } else return language = 'en';
+
+import getLanguage from "./translate.js";
+
+
+let language = localStorage.getItem('lang');
+
+console.log(language)
+
+const placeHolder = { 
+  en: '[Enter your name]',
+  ru: '[Введите ваше имя]',
 }
 
 function getTimeOfDay() {
-    const greetingDate = new Date();
-    const hours = greetingDate.getHours();
-    const partOfDay = {
-        'en': ['night,', 'morning,', 'afternoon,', 'evening,'],
-        'ru': ['ночи,', 'утро,', 'день,', 'вечер,']
-    };
-    return (partOfDay[getLanguage()][Math.floor(hours / 6)])
+  let partOfDay = {
+    en: ['night', 'morning', 'afternoon', 'evening'],
+    ru: ['ночи,', 'утро,', 'день,', 'вечер,']
+  };
+let greetingDate = new Date();
+let hours = Number(greetingDate.getHours());
+
+return (partOfDay[language][(Math.floor(hours/6))]);
 }
 
 function showGreeting(){
 let greetingText ='';
-if (getLanguage() == 'en'){
+if (language == 'en'){
     greetingText = `Good ${getTimeOfDay()}`;
 } else { 
     if(getTimeOfDay() == 'ночи,'){
@@ -30,6 +37,8 @@ if (getLanguage() == 'en'){
     } else
     greetingText = `Добрый ${getTimeOfDay()}`
 };
+
+  name.setAttribute('placeholder', placeHolder[language]); 
   return greeting.innerHTML = greetingText;
 }
 

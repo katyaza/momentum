@@ -23,6 +23,7 @@ function BackgroungSlaider(){
    let randomNum = randomNumGlobal;
    return randomNum;
   }
+  
     
   prevSlideButtom.addEventListener('click', getSlidePrev)
   nextSlideButtom.addEventListener('click', getSlideNext)
@@ -46,8 +47,43 @@ function BackgroungSlaider(){
       body.style.backgroundImage = `url(${img.src})` 
     }; 
   }
-setBG()
 
+//   async function setBgUnsplah() {
+//     const img = new Image();
+//     const url = `https://api.unsplash.com/photos/random?orientation=landscape&query=${showPartOfDay()}&client_id=lESpxNVnT20zj4Odjhq4i2a5hdm8-JdfPGMmgOXLGDw`;
+//     const res = await fetch(url);
+//     const data = await res.json();
+//     img.src = data.urls.regular;
+//     img.onload = () => {
+//         body.style.backgroundImage = `url(${img.src})`;
+//     }
+// }
+// async function setBgUnsplah() {
+//   const img = new Image();
+//   const url = `https://www.flickr.com/services/rest/?method=flickr.photos.search&api_key=b698b1387ff6c0bd891e30f016959b55&tags=${showPartOfDay()}&extras=url_l&format=json&nojsoncallback=1`;
+//   const res = await fetch(url);
+//   const data = await res.json();
+//   img.src = data.photos.photo[getRandomNum(100)].url_l;
+//   img.onload = () => {
+//       body.style.backgroundImage = `url(${img.src})`;
+//   }
+// }
+
+
+//   let linkSetting = localStorage.getItem('link');
+//   switch(linkSetting) {
+//       case 'github': 
+//           setBgFromGitHub(random)
+//           break;
+//       case 'unsplash': 
+//           setBgFromUnsplah();
+//           break;
+//       case 'flickr':
+//           setBgFromFLickR()
+//           break;
+//   }
+// }
+setBG()
 }
 
 export default BackgroungSlaider;

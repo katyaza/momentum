@@ -1,7 +1,7 @@
 
 const time = document.querySelector('.time');
 
-import showDate from "./date";
+import showDate from "./date.js";
 showDate();
 
 export default function showTime() {
@@ -11,4 +11,3 @@ export default function showTime() {
   setTimeout(showTime, 1000);
   setTimeout(showDate, 1000);
 }
-
