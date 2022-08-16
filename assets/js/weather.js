@@ -12,7 +12,19 @@ async function getWeather() {
   
   if (city.textContent.length !== 0){
   weatherInfo.style.display = 'flex';
-
+  let nameCity = localStorage.getItem('city');
+  let defaultCity='Minsk';
+  city.type = "text";
+  city.classList.add('city');
+  if (nameCity) {
+      if (nameCity == 0) {
+          city.textContent = defaultCity;
+      } else {
+          city.value = localStorage.getItem('city');
+      }
+  } else {
+      city.value = defaultCity;
+  }
   const url = `https://api.openweathermap.org/data/2.5/weather?q=${city.textContent}&lang=${language}&appid=aa5a4f124612c42ba55c337a61534ec7&units=metric`;
   const res = await fetch(url);
   const data = await res.json();
@@ -41,7 +53,7 @@ async function getWeather() {
   weatherHumidity.innerHTML = `${translation.humidity[language]} ${data.main.humidity.toFixed(0)} %`;
   weatherDescription.innerHTML = data.weather[0].description;
   }
-}
+};
 
 
 function setLocalStorage() {
@@ -53,12 +65,14 @@ function getLocalStorage() {
   }
 }
 
+function sendCity(){
 function setCity(event) {
-  if (event.code == 'Enter') {
+  if (event.code === 'Enter') {
     setLocalStorage()
     getWeather();
     city.blur();
   }
+}
 
 document.addEventListener('click', (e)=>{
   const withinBondaries = e.composedPath().includes(city);
@@ -73,17 +87,17 @@ document.addEventListener('click', (e)=>{
 document.addEventListener('DOMContentLoaded', getWeather);
 city.addEventListener('keypress', setCity);
 
-
-window.addEventListener('beforeunload', setLocalStorage);
-window.addEventListener('load', getLocalStorage)
-
-getLocalStorage()
-
 }
+
 
 function initWeather(){
   getWeather()
+  window.addEventListener('beforeunload', setLocalStorage);
+  window.addEventListener('load', getLocalStorage)
+  sendCity();
+  getWeather()
+
 }
 
-
+getWeather()
 export default initWeather;

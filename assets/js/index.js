@@ -1,6 +1,7 @@
 import '../../css/owfont-regular.css'
 import '../../css/style.css'
 
+
 import initPanel from "./settinglist.js"
 initPanel()
 
@@ -29,7 +30,9 @@ import changeQuotes from "./quotes.js";
 changeQuotes()
 
 import initWeather from "./weather.js";
-initWeather()
+
+
+
 
 
 

@@ -2,6 +2,10 @@ const settingItemTitle = document.querySelectorAll('.setting__text');
 const widgetItemText = document.querySelectorAll('.widget__name');
 const settingsBtn = document.querySelector('.settings-img');
 const settingsBlock = document.querySelector('.settings');
+let language = document.querySelector('.language'); 
+
+
+language = language.textContent;
 
 let isOpen = 'false';
 
@@ -32,7 +36,6 @@ function openSettings() {
 export default function initPanel() {
     settingsBtn.addEventListener('click', openSettings);
 
-    let language = localStorage.getItem('lang');
 
     for (let i = 0; i<settingItemTitle.length; i++){
         settingItemTitle[i].innerHTML = wordsForTitle[language][i];

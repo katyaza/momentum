@@ -1,6 +1,6 @@
 const date = document.querySelector('.date');
 
-let language = localStorage.getItem('lang');
+let language = localStorage.getItem('lang')
 
 function showDate() {
   const newDate = new Date;
