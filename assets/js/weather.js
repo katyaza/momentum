@@ -6,7 +6,8 @@ const weatherWind = document.querySelector('.wind');
 const weatherHumidity = document.querySelector('.humidity');
 const weatherInfo = document.querySelector('.weather__info');
 
-let language = localStorage.getItem('lang')
+let language = document.querySelector('.language');
+language = language.textContent
 
 async function getWeather() {
   
